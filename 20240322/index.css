@@ -1,0 +1,151 @@
+ /* *{ 
+     border:solid 1px white; 
+ }    */
+ body{
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: #02005B;
+    color: rgba(255,255,255,0.95);
+    font-size: 15px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    font-family: "微軟正黑體",sans-serif;
+}
+.resume{
+    /* 讓resum內的兩個div左右呈現 */
+    display: flex;
+    max-width: 950px;
+    border:solid 8px white;
+}
+.left{
+    /* 顯示整個螢幕的5份 */
+    flex: 5;
+    padding-left: 15px;
+    padding-right: 50px;
+    border-right: solid 1px #FF7168;
+}
+.right{
+    /* 顯示整個螢幕的7份 */
+    flex: 7;
+    padding-right: 15px;
+    padding-left: 50px;
+    /* 設定在right底下的div都以right左上角為座標 */
+    position: relative;
+}
+ul{
+    /* 設定每個項目前面不要顯示圓圈或是數字 */
+    list-style: none;
+    /* 讓每個項目前面不要有距離 */
+    padding: 0px;
+
+}
+/* 每個block英文標題 */
+h4{
+    margin: 0px;
+    margin-top: 40px;
+    /* 設定文字粗體大小與透明度 */
+    font-weight: 400;
+    opacity: 0.8;
+}
+/* 每個block中文標題 */
+h2{
+    margin: 0px;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+/* 在HTML有h2指令的文字內容，後面都需要加上以下的格式設定 */
+h2::after{
+content:"";
+width: 20px;
+height: 8px;
+background-color: #FF7168;
+display: inline-block;
+margin-left: 10px;
+}
+
+/* 設定文字為白色無底線 */
+a{
+    color: white;
+    text-decoration: none;
+}
+
+/* 設定框線，比較像按鈕 */
+.btn{
+    border: solid 3px #FF7168;
+    padding: 5px 20px;
+    margin-right: 10px;
+}
+.fill{
+    background-color: #FF7168;
+}
+.deciration{
+    width: 300px ;
+    height: 140px ;
+    /* 產生漸層色 */
+    background:linear-gradient(to bottom right,#ff5f5f,#ffffae);
+    /* 產生一個方塊角的圓弧，左上，右上，右下，左下 */
+    border-radius: 70px 0px 0px 70px;
+    position: absolute;
+    right: 0px;
+    top: 50px;
+}
+.Experience{
+    margin-top: 180px;
+}
+/* 代表在.listExprience所有li都要遵循這樣格式，所以第一層li都要遵循這樣格式設定 */
+
+.listExperience li{
+    display: flex;
+    margin-bottom: 10px;
+}
+.listExperience li ul{
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left:solid 4px white;
+    
+}
+.circle{
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+    /* 超過範圍隱藏 */
+    overflow: hidden;
+}
+.p90,.p180,.p270,.p360{
+    /* 由於.p90在.circle底下，所以50%是以circle的寬高的50% */
+    width: 50%;
+    height: 50%;
+    background-color: #FF7168;
+    position: absolute;
+    left: 50%;
+    top: 0;
+
+}
+.p180{
+    top:50%;
+}
+.p270{
+    left:0;
+    top:50%;
+}
+.p360{
+    left:0;
+
+}
+.circle::after{
+    content: "";
+    display: block;
+    background-color: #02005B;
+    /* calc為一個計算函數，幫你做加減乘除 */
+    width: calc( 100% - 20px);
+    height: calc( 100% - 20px);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
